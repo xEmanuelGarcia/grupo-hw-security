@@ -63,6 +63,11 @@ jobs:
         echo "🔍 Verificando .htaccess:"
         cat dist/.htaccess || echo "❌ .htaccess não encontrado!"
 
+    - name: Renomear .htaccess para htaccess.txt temporariamente
+      run: |
+        cp dist/.htaccess dist/htaccess.txt
+        echo "✅ Copiado .htaccess para htaccess.txt"
+        
     - name: Deploy via FTP para cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
