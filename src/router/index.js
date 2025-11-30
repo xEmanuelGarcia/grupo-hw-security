@@ -141,6 +141,16 @@ const routes = [
   {
     path: '/landing',
     redirect: '/seguranca'
+  },
+  {
+    path: '/cameras',
+    name: 'CamerasLanding',
+    component: () => import('../pages/CamerasLandingPage.vue'),
+    meta: {
+      title: 'Câmeras de Segurança - Veja Tudo, Proteja Tudo - Grupo HW',
+      description: 'Monitore 24h com câmeras de alta definição. Acesso remoto pelo celular, alertas em tempo real e armazenamento seguro. Proteção completa para sua residência ou empresa.',
+      keywords: 'câmeras de segurança, cftv, monitoramento 24h, câmeras hd, vigilância, segurança residencial, segurança empresarial'
+    }
   }
 ]
 
