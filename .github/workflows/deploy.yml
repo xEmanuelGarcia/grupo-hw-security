@@ -59,6 +59,9 @@ jobs:
         echo ""
         echo "📄 Total de arquivos:"
         find dist/ -type f | wc -l
+        echo ""
+        echo "🔍 Verificando .htaccess:"
+        cat dist/.htaccess || echo "❌ .htaccess não encontrado!"
 
     - name: Deploy via FTP para cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
