@@ -58,8 +58,10 @@ jobs:
         server: ftp.hwseg.com.br
         username: hg139271
         password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-        protocol: ftp
+        protocol: ftps
         port: 21
         local-dir: ./dist/
         server-dir: /public_html/
         log-level: verbose
+        security: loose
+        timeout: 60000
