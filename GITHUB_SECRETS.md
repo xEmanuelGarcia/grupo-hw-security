@@ -82,19 +82,17 @@ IA6lpra07A0AAAAVZ2l0aHViLWFjdGlvbnMtZGVwbG95AQIDBAUG
 ```
 ftp.hwseg.com.br
 ```
-*OU o IP do servidor se não tiver domínio configurado*
 
 ### 6. CPANEL_FTP_USERNAME
 ```
-usuario@hwseg.com.br
+hg139271
 ```
-*Substitua pelo seu usuário FTP real do cPanel*
 
 ### 7. CPANEL_FTP_PASSWORD
 ```
-sua-senha-ftp-aqui
+VOCÊ-PRECISA-ADICIONAR-SUA-SENHA-AQUI
 ```
-*Substitua pela sua senha FTP real*
+*Substitua pela sua senha FTP real do cPanel*
 
 ---
 
@@ -119,8 +117,8 @@ sua-senha-ftp-aqui
 - [ ] SERVIDOR_PROPRIO_PATH = /var/www/grupohw.org
 - [ ] SERVIDOR_PROPRIO_SSH_KEY = (chave SSH completa)
 - [ ] CPANEL_FTP_SERVER = ftp.hwseg.com.br
-- [ ] CPANEL_FTP_USERNAME = seu usuário FTP
-- [ ] CPANEL_FTP_PASSWORD = sua senha FTP
+- [ ] CPANEL_FTP_USERNAME = hg139271
+- [ ] CPANEL_FTP_PASSWORD = sua senha FTP (APENAS VOCÊ SABE)
 
 ---
 
