@@ -52,16 +52,23 @@ jobs:
         name: dist
         path: dist/
 
+    - name: Listar arquivos do build
+      run: |
+        echo "📦 Arquivos que serão enviados:"
+        ls -lah dist/
+        echo ""
+        echo "📄 Total de arquivos:"
+        find dist/ -type f | wc -l
+
     - name: Deploy via FTP para cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 69.6.212.30
         username: hg139271
         password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-        protocol: ftps
+        protocol: ftp
         port: 21
         local-dir: ./dist/
-        server-dir: /public_html/
+        server-dir: ./public_html/
         log-level: verbose
-        security: loose
-        timeout: 60000
+        dangerous-clean-slate: true
