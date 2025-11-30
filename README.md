@@ -116,3 +116,6 @@ Para dúvidas sobre personalização ou implementação, consulte:
 ---
 
 **Desenvolvido para empresas de segurança que valorizam presença digital profissional e moderna.**
+
+## 🚀 Deploy Dual Automático Ativo
+Deploy simultâneo para grupohw.org e hwseg.com.br
