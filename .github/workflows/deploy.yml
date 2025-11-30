@@ -55,7 +55,7 @@ jobs:
     - name: Deploy via FTP para cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ftp.hwseg.com.br
+        server: 69.6.212.30
         username: hg139271
         password: ${{ secrets.CPANEL_FTP_PASSWORD }}
         protocol: ftps
