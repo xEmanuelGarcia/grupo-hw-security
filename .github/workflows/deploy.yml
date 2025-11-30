@@ -63,10 +63,24 @@ jobs:
         echo "🔍 Verificando .htaccess:"
         cat dist/.htaccess || echo "❌ .htaccess não encontrado!"
 
-    - name: Renomear .htaccess para htaccess.txt temporariamente
+    - name: Criar .htaccess se não existir
       run: |
+        if [ ! -f dist/.htaccess ]; then
+          echo "⚠️ .htaccess não encontrado, criando..."
+          cat > dist/.htaccess << 'EOF'
+        <IfModule mod_rewrite.c>
+          RewriteEngine On
+          RewriteBase /
+          RewriteRule ^index\.html$ - [L]
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule . /index.html [L]
+        </IfModule>
+        EOF
+        fi
         cp dist/.htaccess dist/htaccess.txt
-        echo "✅ Copiado .htaccess para htaccess.txt"
+        echo "✅ Arquivos preparados"
+        ls -la dist/ | grep -E "\.htaccess|htaccess"
         
     - name: Deploy via FTP para cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
