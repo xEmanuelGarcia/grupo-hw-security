@@ -43,15 +43,16 @@ jobs:
         name: dist
         path: dist/
 
-    - name: Deploy via SFTP para Servidor Próprio
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      with:
-        server: ${{ secrets.SERVIDOR_PROPRIO_HOST }}
-        username: ${{ secrets.SERVIDOR_PROPRIO_USER }}
-        ssh_private_key: ${{ secrets.SERVIDOR_PROPRIO_SSH_KEY }}
-        local_path: './dist/*'
-        remote_path: ${{ secrets.SERVIDOR_PROPRIO_PATH }}
-        sftp_only: true
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SERVIDOR_PROPRIO_SSH_KEY }}" > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        ssh-keyscan -H ${{ secrets.SERVIDOR_PROPRIO_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy via SCP para Servidor Próprio
+      run: |
+        scp -i ~/.ssh/deploy_key -r dist/* ${{ secrets.SERVIDOR_PROPRIO_USER }}@${{ secrets.SERVIDOR_PROPRIO_HOST }}:${{ secrets.SERVIDOR_PROPRIO_PATH }}/
 
   deploy-cpanel:
     name: Deploy hwseg.com.br (cPanel)
