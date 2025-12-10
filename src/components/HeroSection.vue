@@ -25,11 +25,10 @@
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title animate-fade-up">
-          Soluções Completas em Segurança
+          O Que Foi Conquistado Com Anos Não Vai Ser Levado em Minutos
         </h1>
         <p class="hero-subtitle animate-fade-up delay-200">
-          Há mais de 7 anos protegendo o que é mais importante para você. 
-          Portarias, CFTV, alarmes monitorados, rastreamento e muito mais.
+          Invista em segurança de verdade. Câmeras com visão total, alertas instantâneos e o conforto de saber: agora nada passa despercebido.
         </p>
         <div class="hero-buttons animate-fade-up delay-400">
           <a href="https://wa.me/5551933003158?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20os%20serviços%20de%20segurança." class="btn btn-gold">
