@@ -6,18 +6,16 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              Veja tudo.<br/>
-              Proteja tudo.
+              O Que Foi Conquistado Com Anos<br/>
+              Não Vai Ser Levado em Minutos
             </h1>
             <div class="location-badge">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Onde estiver.</span>
+              <i class="fas fa-shield-alt"></i>
+              <span>Proteção 24/7</span>
             </div>
-            <p class="hero-description">
-              Monitore 24h, com imagens de alta definição, 
-              por dispositivos móveis conectados 24 horas 
-              por dia, onde você estiver através de um 
-              app intuitivo e fácil de usar.
+            <p class="hero-subtitle">
+              Invista em segurança de verdade. Câmeras com visão total, 
+              alertas instantâneos e o conforto de saber: agora nada passa despercebido.
             </p>
             <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteger%20meu%20espaço%20com%20câmeras%20de%20segurança!" 
                class="btn btn-primary btn-large">
@@ -26,7 +24,7 @@
             </a>
           </div>
           <div class="hero-image">
-            <img src="https://via.placeholder.com/400x500/333/FFD700?text=Camera+PTZ" 
+            <img src="@/assets/images/services/camera.png" 
                  alt="Câmera de Segurança PTZ" 
                  class="camera-img">
           </div>
@@ -437,7 +435,7 @@ export default {
 <style scoped>
 /* Hero Section */
 .hero-cameras {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  background: #181818;
   padding: 6rem 0 4rem;
   min-height: 600px;
   display: flex;
@@ -467,22 +465,23 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 214, 0, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 214, 0, 0.3);
 }
 
 .location-badge i {
-  color: #FF4444;
+  color: #FFD600;
 }
 
-.hero-description {
+.hero-subtitle {
   font-size: 1.125rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   opacity: 0.9;
+  color: #f5f5f5;
 }
 
 .hero-image {
@@ -499,7 +498,7 @@ export default {
 
 /* Problems Section */
 .problems-section {
-  background: white;
+  background: #232323;
   padding: 5rem 0;
 }
 
@@ -508,7 +507,7 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .section-title.white {
@@ -520,7 +519,7 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .problems-grid {
@@ -537,24 +536,25 @@ export default {
 
 .problem-icon {
   font-size: 3rem;
-  color: #FF4444;
+  color: #FFD600;
   margin-bottom: 1rem;
 }
 
 .problem-card h3 {
   font-size: 1.25rem;
-  color: #1a1a1a;
+  color: #f5f5f5;
   font-weight: 600;
 }
 
 .highlight-box {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  background: #181818;
   border-radius: 16px;
   padding: 3rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
   align-items: center;
+  border: 1px solid rgba(255, 214, 0, 0.3);
 }
 
 .highlight-text {
@@ -565,7 +565,7 @@ export default {
 }
 
 .red-text {
-  color: #FF4444;
+  color: #FFD600;
   font-weight: 600;
 }
 
@@ -576,7 +576,7 @@ export default {
 
 /* Tipos de Câmeras */
 .cameras-types {
-  background: #1a1a1a;
+  background: #181818;
   padding: 5rem 0;
   color: white;
 }
@@ -622,7 +622,7 @@ export default {
 
 .feature-item i {
   font-size: 2rem;
-  color: #FFD700;
+  color: #FFD600;
   flex-shrink: 0;
 }
 
@@ -634,7 +634,7 @@ export default {
 
 /* Como Funciona */
 .how-it-works {
-  background: #f8f9fa;
+  background: #232323;
   padding: 5rem 0;
 }
 
@@ -656,7 +656,7 @@ export default {
 .step-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #FFD700;
+  color: #FFD600;
   flex-shrink: 0;
 }
 
@@ -664,12 +664,13 @@ export default {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .step-content p {
-  color: #666;
+  color: #f5f5f5;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 .process-images {
@@ -686,7 +687,7 @@ export default {
 
 /* Depoimentos */
 .testimonials-dark {
-  background: #1a1a1a;
+  background: #181818;
   padding: 5rem 0;
   color: white;
 }
@@ -715,11 +716,11 @@ export default {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #FFD700;
+  background: #FFD600;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1a1a;
+  color: #181818;
   font-size: 1.5rem;
 }
 
@@ -730,7 +731,7 @@ export default {
 }
 
 .stars {
-  color: #FFD700;
+  color: #FFD600;
   font-size: 1rem;
 }
 
@@ -758,7 +759,7 @@ export default {
 .stat-number {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #FFD700;
+  color: #FFD600;
   margin-bottom: 0.5rem;
 }
 
@@ -770,7 +771,7 @@ export default {
 
 /* Formulário */
 .form-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #232323;
   padding: 5rem 0;
 }
 
@@ -781,10 +782,11 @@ export default {
 }
 
 .form-card {
-  background: white;
+  background: #181818;
   padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 214, 0, 0.3);
 }
 
 .form-title {
@@ -792,11 +794,11 @@ export default {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .highlight-red {
-  color: #FF4444;
+  color: #FFD600;
 }
 
 .contact-form {
@@ -813,37 +815,38 @@ export default {
 
 .form-group label {
   font-weight: 600;
-  color: #1a1a1a;
+  color: #f5f5f5;
   font-size: 0.95rem;
 }
 
 .form-group input,
 .form-group select {
   padding: 1rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #333;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: white;
-  color: #1a1a1a;
+  background: #232323;
+  color: #f5f5f5;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #FF4444;
-  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+  border-color: #FFD600;
+  box-shadow: 0 0 0 3px rgba(255, 214, 0, 0.1);
 }
 
 .form-disclaimer {
   text-align: center;
   font-size: 0.875rem;
-  color: #666;
+  color: #f5f5f5;
+  opacity: 0.8;
   line-height: 1.6;
 }
 
 .form-disclaimer a {
-  color: #FF4444;
+  color: #FFD600;
   text-decoration: none;
 }
 
@@ -889,14 +892,15 @@ export default {
 }
 
 .btn-primary {
-  background: #FF4444;
-  color: white;
+  background: #FFD600;
+  color: #181818;
+  font-weight: 700;
 }
 
 .btn-primary:hover {
-  background: #dd3333;
+  background: #FFC800;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 68, 68, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 214, 0, 0.3);
 }
 
 .btn-large {
