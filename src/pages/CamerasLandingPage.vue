@@ -60,14 +60,9 @@
           <div class="highlight-content">
             <p class="highlight-text">
               <strong class="fear-phrase">Se você já teve medo de sair de casa,</strong> deixar seu negócio sozinho 
-              ou se preocupou com o que acontece quando você não está presente...<br/><br/>
-              
-              <strong class="impact-phrase">Então saiba a importância de agir antes que algo aconteça.</strong><br/><br/>
-              
-              <span class="red-text">Alertas instantâneos</span> via E-mail, celular ou SMS. 
-              <span class="red-text">Imagens em HD 24h.</span> 
-              Armazene <span class="red-text">até 3 meses de gravações.</span>
+              ou se preocupou com o que acontece quando você não está presente...
             </p>
+            <p class="impact-phrase">Então saiba a importância de agir antes que algo aconteça.</p>
             <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteção%20com%20câmeras%20de%20segurança!" 
                class="btn btn-primary btn-large">
               <i class="fab fa-whatsapp"></i>
@@ -539,55 +534,64 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .problem-card {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.2rem 0.8rem;
 }
 
 .problem-icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #FFD600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .problem-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #f5f5f5;
   font-weight: 600;
 }
 
 .highlight-box {
   background: #181818;
-  border-radius: 16px;
-  padding: 2.5rem;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
   align-items: center;
   border: 1px solid rgba(255, 214, 0, 0.3);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .highlight-text {
   color: white;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .fear-phrase {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #fff;
   font-weight: 600;
 }
 
 .impact-phrase {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: #FFD600;
-  display: block;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
 }
 
 .red-text {
@@ -597,7 +601,9 @@ export default {
 
 .highlight-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 12px;
+  transform: scale(1.05);
 }
 
 /* Tipos de Câmeras */
