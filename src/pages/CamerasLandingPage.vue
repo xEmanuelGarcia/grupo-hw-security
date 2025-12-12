@@ -35,7 +35,7 @@
     <!-- Problemas Section -->
     <section class="problems-section">
       <div class="container">
-        <h2 class="section-title">Você não pode estar em todos os lugares<br/>ao mesmo tempo. Mas suas câmeras podem.</h2>
+        <h2 class="section-title">É impossível estar em todos os lugares ao mesmo tempo</h2>
         
         <div class="problems-grid">
           <div class="problem-card">
@@ -59,15 +59,14 @@
         <div class="highlight-box">
           <div class="highlight-content">
             <p class="highlight-text">
-              <strong>É impossível estar em todos os lugares.</strong> 
-              Mas você pode <span class="red-text">ver tudo, de qualquer lugar.</span><br/><br/>
+              <strong class="fear-phrase">Se você já teve medo de sair de casa,</strong> deixar seu negócio sozinho 
+              ou se preocupou com o que acontece quando você não está presente...<br/><br/>
+              
+              <strong class="impact-phrase">Então saiba a importância de agir antes que algo aconteça.</strong><br/><br/>
               
               <span class="red-text">Alertas instantâneos</span> via E-mail, celular ou SMS. 
-              <span class="red-text">Imagens em alta definição 24h.</span> 
-              Armazene com segurança <span class="red-text">até 3 meses de gravações</span> 
-              nas câmeras ou na nuvem.<br/><br/>
-              
-              <strong>Proteja antes que algo aconteça. Não depois.</strong>
+              <span class="red-text">Imagens em HD 24h.</span> 
+              Armazene <span class="red-text">até 3 meses de gravações.</span>
             </p>
             <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteção%20com%20câmeras%20de%20segurança!" 
                class="btn btn-primary btn-large">
@@ -512,15 +511,16 @@ export default {
 /* Problems Section */
 .problems-section {
   background: #232323;
-  padding: 5rem 0;
+  padding: 3rem 0 3.5rem;
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #fff;
+  line-height: 1.3;
 }
 
 .section-title.white {
@@ -538,19 +538,19 @@ export default {
 .problems-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .problem-card {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .problem-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #FFD600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .problem-card h3 {
@@ -562,19 +562,32 @@ export default {
 .highlight-box {
   background: #181818;
   border-radius: 16px;
-  padding: 3rem;
+  padding: 2.5rem;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
   align-items: center;
   border: 1px solid rgba(255, 214, 0, 0.3);
 }
 
 .highlight-text {
   color: white;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.fear-phrase {
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.impact-phrase {
+  font-size: 1.3rem;
+  color: #FFD600;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .red-text {
