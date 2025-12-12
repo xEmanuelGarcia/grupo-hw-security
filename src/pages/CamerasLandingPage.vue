@@ -59,10 +59,11 @@
         <div class="highlight-box">
           <div class="highlight-content">
             <p class="highlight-text">
-              <strong class="fear-phrase">Se você já teve medo de sair de casa,</strong> deixar seu negócio sozinho 
-              ou se preocupou com o que acontece quando você não está presente...
+              <strong class="fear-phrase">Se você já teve medo de sair de casa,</strong><br/>
+              deixar seu negócio sozinho ou se preocupou<br/>
+              com o que acontece quando você não está presente...
             </p>
-            <p class="impact-phrase">Então saiba a importância de agir antes que algo aconteça.</p>
+            <p class="impact-phrase">Então saiba a importância de agir<br/>antes que algo aconteça.</p>
             <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteção%20com%20câmeras%20de%20segurança!" 
                class="btn btn-primary btn-large">
               <i class="fab fa-whatsapp"></i>
@@ -557,13 +558,12 @@ export default {
 .highlight-box {
   background: #181818;
   border-radius: 12px;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 1.5rem 2.5rem 2rem;
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.5fr 1fr;
   align-items: center;
   border: 1px solid rgba(255, 214, 0, 0.3);
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -571,12 +571,13 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .highlight-text {
   color: white;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -587,10 +588,10 @@ export default {
 }
 
 .impact-phrase {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: #FFD600;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
   margin: 0;
 }
 
