@@ -447,9 +447,11 @@ export default {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .hero-text {
@@ -457,9 +459,9 @@ export default {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   color: white;
 }
@@ -491,12 +493,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .camera-img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  transform: scale(1.1);
 }
 
 /* Problems Section */
