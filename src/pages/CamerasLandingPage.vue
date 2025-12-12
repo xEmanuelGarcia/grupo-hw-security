@@ -6,8 +6,8 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              O Que Foi Conquistado Com Anos<br/>
-              Não Vai Ser Levado em Minutos
+              O que foi conquistado com anos<br/>
+              não vai ser levado em minutos
             </h1>
             <div class="location-badge">
               <i class="fas fa-shield-alt"></i>
@@ -86,28 +86,28 @@
         
         <div class="types-grid">
           <div class="type-card">
-            <img src="https://via.placeholder.com/250x200/444/FFD700?text=Bullet+HD" 
-                 alt="Câmera Bullet HD" 
+            <img :src="camera3Img" 
+                 alt="Câmera Externas" 
                  class="type-img">
-            <h3>Câmeras Bullet HD</h3>
+            <h3>Câmeras Externas HD</h3>
           </div>
           <div class="type-card">
-            <img src="https://via.placeholder.com/250x200/444/FFD700?text=Monitoramento+Interno" 
+            <img :src="camera4Img" 
                  alt="Monitoramento Interno" 
                  class="type-img">
             <h3>Monitoramento Interno</h3>
           </div>
           <div class="type-card">
-            <img src="https://via.placeholder.com/250x200/444/FFD700?text=Centro+Monitoramento" 
+            <img :src="camera5Img" 
                  alt="Centro de Monitoramento" 
                  class="type-img">
-            <h3>Centro 24 horas</h3>
+            <h3>Central 24 horas</h3>
           </div>
         </div>
 
         <div class="features-grid">
           <div class="feature-item">
-            <i class="fas fa-hd-video"></i>
+            <i class="fas fa-video"></i>
             <div>
               <h4>Imagens em alta<br/>definição 24h</h4>
             </div>
@@ -115,7 +115,7 @@
           <div class="feature-item">
             <i class="fas fa-mobile-alt"></i>
             <div>
-              <h4>Acesse remoto - de<br/>qualquer lugar via<br/>SSID ou celular</h4>
+              <h4>Acesse remoto<br/>via celular</h4>
             </div>
           </div>
           <div class="feature-item">
@@ -125,9 +125,9 @@
             </div>
           </div>
           <div class="feature-item">
-            <i class="fas fa-shield-alt"></i>
+            <i class="fas fa-database"></i>
             <div>
-              <h4>O padrão premium é<br/>o mais avançado e<br/>seguro</h4>
+              <h4>Gravação contínua<br/>armazenamento seguro</h4>
             </div>
           </div>
         </div>
@@ -378,6 +378,9 @@ export default {
   setup() {
     const cameraImg = new URL('../assets/images/services/camera.png', import.meta.url).href
     const camera2Img = new URL('../assets/images/services/camera 2.png', import.meta.url).href
+    const camera3Img = new URL('../assets/images/services/camera 3.png', import.meta.url).href
+    const camera4Img = new URL('../assets/images/services/camera 4.png', import.meta.url).href
+    const camera5Img = new URL('../assets/images/services/camera 5.png', import.meta.url).href
     
     const form = ref({
       name: '',
@@ -426,6 +429,9 @@ export default {
     return {
       cameraImg,
       camera2Img,
+      camera3Img,
+      camera4Img,
+      camera5Img,
       form,
       isSubmitting,
       submitMessage,
