@@ -291,90 +291,10 @@
         </div>
       </div>
     </section>
-
-    <!-- Formulário Section -->
-    <section class="form-section">
-      <div class="container-form">
-        <h2 class="section-title-dark">Não espere o imprevisto.<br/>Previna com quem entende.</h2>
-        
-        <div class="form-card">
-          <h3 class="form-title">
-            Preencha e receba<br/>
-            seu <span class="highlight-red">orçamento!</span>
-          </h3>
-          
-          <form @submit.prevent="handleSubmit" class="contact-form">
-            <div class="form-group">
-              <label for="name">Nome *</label>
-              <input 
-                type="text" 
-                id="name" 
-                v-model="form.name" 
-                placeholder="Seu nome completo"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input 
-                type="email" 
-                id="email" 
-                v-model="form.email" 
-                placeholder="seu@email.com"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Telefone *</label>
-              <input 
-                type="tel" 
-                id="phone" 
-                v-model="form.phone" 
-                placeholder="(51) 99999-9999"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="location">Tipo de Local *</label>
-              <select id="location" v-model="form.location" required>
-                <option value="">Selecione...</option>
-                <option value="residencia">Residência</option>
-                <option value="comercio">Comércio</option>
-                <option value="industria">Indústria</option>
-                <option value="condominio">Condomínio</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full" :disabled="isSubmitting">
-              <span v-if="!isSubmitting">Solicitar orçamento</span>
-              <span v-else>Enviando...</span>
-            </button>
-
-            <p class="form-disclaimer">
-              Ao solicitar orçamento, você concorda em receber contato e aceita nossa 
-              <router-link to="/politica-de-privacidade">política de privacidade</router-link> e 
-              <router-link to="/termos-de-uso">termos de uso</router-link>.
-            </p>
-          </form>
-
-          <transition name="fade">
-            <div v-if="submitMessage" class="submit-message" :class="submitSuccess ? 'success' : 'error'">
-              {{ submitMessage }}
-            </div>
-          </transition>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-
 export default {
   name: 'CamerasLandingPage',
   setup() {
@@ -385,50 +305,6 @@ export default {
     const camera5Img = new URL('../assets/images/services/camera 5.png', import.meta.url).href
     const camera6Img = new URL('../assets/images/services/fullcolor.jpg', import.meta.url).href
     const camera7Img = new URL('../assets/images/services/CAMERA 7.png', import.meta.url).href
-    
-    const form = ref({
-      name: '',
-      email: '',
-      phone: '',
-      location: ''
-    })
-
-    const isSubmitting = ref(false)
-    const submitMessage = ref('')
-    const submitSuccess = ref(false)
-
-    const handleSubmit = async () => {
-      isSubmitting.value = true
-      submitMessage.value = ''
-
-      try {
-        // Simular envio (integre com sua API real)
-        await new Promise(resolve => setTimeout(resolve, 1500))
-
-        // Redirecionar para WhatsApp com mensagem personalizada
-        const message = `Olá! Gostaria de um orçamento para câmeras de segurança.%0A%0ANome: ${form.value.name}%0AEmail: ${form.value.email}%0ATelefone: ${form.value.phone}%0ATipo: ${form.value.location}`
-        window.open(`https://wa.me/5551933003158?text=${message}`, '_blank')
-
-        submitSuccess.value = true
-        submitMessage.value = 'Redirecionando para WhatsApp...'
-        
-        // Limpar formulário
-        form.value = {
-          name: '',
-          email: '',
-          phone: '',
-          location: ''
-        }
-      } catch (error) {
-        submitSuccess.value = false
-        submitMessage.value = 'Erro ao enviar. Tente novamente.'
-      } finally {
-        isSubmitting.value = false
-        setTimeout(() => {
-          submitMessage.value = ''
-        }, 3000)
-      }
-    }
 
     return {
       cameraImg,
@@ -437,12 +313,7 @@ export default {
       camera4Img,
       camera5Img,
       camera6Img,
-      camera7Img,
-      form,
-      isSubmitting,
-      submitMessage,
-      submitSuccess,
-      handleSubmit
+      camera7Img
     }
   }
 }
