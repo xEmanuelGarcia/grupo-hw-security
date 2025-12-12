@@ -146,55 +146,57 @@
       <div class="container">
         <h2 class="section-title">Como funciona o processo?</h2>
         
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="step-number">1.</div>
-            <div class="step-content">
-              <h3>Visita técnica gratuita</h3>
-              <p>Analisamos sua propriedade para criar a melhor solução</p>
+        <div class="process-wrapper">
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Visita técnica gratuita</h3>
+                <p>Analisamos sua propriedade para criar a melhor solução</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Projeto sob medida</h3>
+                <p>Desenvolvemos um projeto específico para suas necessidades</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Instalação profissional</h3>
+                <p>Time especializado realiza a instalação com garantia</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Acesso remoto liberado</h3>
+                <p>Configuramos seu app para visualização em qualquer lugar</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>Suporte contínuo e manutenção</h3>
+                <p>Garantimos que sua segurança esteja sempre em dia</p>
+              </div>
             </div>
           </div>
 
-          <div class="process-step">
-            <div class="step-number">2.</div>
-            <div class="step-content">
-              <h3>Projeto sob medida</h3>
-              <p>Desenvolvemos um projeto específico para suas necessidades</p>
-            </div>
+          <div class="process-images">
+            <img :src="camera6Img" 
+                 alt="Processo de instalação" 
+                 class="process-img">
+            <img :src="camera7Img" 
+                 alt="Central de monitoramento" 
+                 class="process-img">
           </div>
-
-          <div class="process-step">
-            <div class="step-number">3.</div>
-            <div class="step-content">
-              <h3>Instalação profissional</h3>
-              <p>Time especializado realiza a instalação com garantia</p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">4.</div>
-            <div class="step-content">
-              <h3>Acesso remoto liberado</h3>
-              <p>Configuramos seu app para visualização em qualquer lugar</p>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">5.</div>
-            <div class="step-content">
-              <h3>Suporte contínuo e manutenção preventiva</h3>
-              <p>Garantimos que sua segurança esteja sempre em dia</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-images">
-          <img src="https://via.placeholder.com/350x200/333/FFD700?text=Instalacao" 
-               alt="Processo de instalação" 
-               class="process-img">
-          <img src="https://via.placeholder.com/350x200/333/FFD700?text=Monitoramento" 
-               alt="Central de monitoramento" 
-               class="process-img">
         </div>
       </div>
     </section>
@@ -381,6 +383,8 @@ export default {
     const camera3Img = new URL('../assets/images/services/camera 3.png', import.meta.url).href
     const camera4Img = new URL('../assets/images/services/camera 4.png', import.meta.url).href
     const camera5Img = new URL('../assets/images/services/camera 5.png', import.meta.url).href
+    const camera6Img = new URL('../assets/images/services/fullcolor.jpg', import.meta.url).href
+    const camera7Img = new URL('../assets/images/services/CAMERA 7.png', import.meta.url).href
     
     const form = ref({
       name: '',
@@ -432,6 +436,8 @@ export default {
       camera3Img,
       camera4Img,
       camera5Img,
+      camera6Img,
+      camera7Img,
       form,
       isSubmitting,
       submitMessage,
@@ -677,13 +683,17 @@ export default {
   padding: 5rem 0;
 }
 
-.process-grid {
+.process-wrapper {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.process-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .process-step {
@@ -697,31 +707,34 @@ export default {
   font-weight: 700;
   color: #FFD600;
   flex-shrink: 0;
+  min-width: 40px;
 }
 
 .step-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #fff;
 }
 
 .step-content p {
   color: #f5f5f5;
-  line-height: 1.6;
+  line-height: 1.5;
   opacity: 0.9;
+  font-size: 0.9rem;
 }
 
 .process-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .process-img {
   width: 100%;
   border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Depoimentos */
