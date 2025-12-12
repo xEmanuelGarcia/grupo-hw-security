@@ -24,7 +24,7 @@
             </a>
           </div>
           <div class="hero-image">
-            <img src="@/assets/images/services/camera.png" 
+            <img :src="cameraImg" 
                  alt="Câmera de Segurança PTZ" 
                  class="camera-img">
           </div>
@@ -377,6 +377,8 @@ import { ref } from 'vue'
 export default {
   name: 'CamerasLandingPage',
   setup() {
+    const cameraImg = new URL('../assets/images/services/camera.png', import.meta.url).href
+    
     const form = ref({
       name: '',
       email: '',
@@ -422,6 +424,7 @@ export default {
     }
 
     return {
+      cameraImg,
       form,
       isSubmitting,
       submitMessage,
