@@ -35,23 +35,23 @@
     <!-- Problemas Section -->
     <section class="problems-section">
       <div class="container">
-        <h2 class="section-title">Quem não vê, não protege.</h2>
+        <h2 class="section-title">Você não pode estar em todos os lugares<br/>ao mesmo tempo. Mas suas câmeras podem.</h2>
         
         <div class="problems-grid">
           <div class="problem-card">
-            <i class="fas fa-eye-slash problem-icon"></i>
-            <h3>Pontos cegos</h3>
+            <i class="fas fa-door-open problem-icon"></i>
+            <h3>Portões</h3>
           </div>
           <div class="problem-card">
-            <i class="fas fa-video-slash problem-icon"></i>
-            <h3>Estoques</h3>
+            <i class="fas fa-boxes problem-icon"></i>
+            <h3>Estoque</h3>
           </div>
           <div class="problem-card">
             <i class="fas fa-warehouse problem-icon"></i>
-            <h3>Galpões</h3>
+            <h3>Garagem</h3>
           </div>
           <div class="problem-card">
-            <i class="fas fa-building problem-icon"></i>
+            <i class="fas fa-door-closed problem-icon"></i>
             <h3>Corredores</h3>
           </div>
         </div>
@@ -59,21 +59,25 @@
         <div class="highlight-box">
           <div class="highlight-content">
             <p class="highlight-text">
-              <strong>É isso o que você?</strong> - <span class="red-text">Todos os lugares</span> 
-              ao mesmo tempo. <span class="red-text">Alertas em tempo real.</span><br/>
-              com câmeras de alta definição. <span class="red-text">Alertas em tempo real</span> 
-              via E-mail, celular com APP ou SMS. SOMENTE IMAGENS de 
-              alta definição 24h. <span class="red-text">Armazene imagens 100% seguro de 
-              até 3 meses nas câmeras ou online.</span>
+              <strong>É impossível estar em todos os lugares.</strong> 
+              Mas você pode <span class="red-text">ver tudo, de qualquer lugar.</span><br/><br/>
+              
+              <span class="red-text">Alertas instantâneos</span> via E-mail, celular ou SMS. 
+              <span class="red-text">Imagens em alta definição 24h.</span> 
+              Armazene com segurança <span class="red-text">até 3 meses de gravações</span> 
+              nas câmeras ou na nuvem.<br/><br/>
+              
+              <strong>Proteja antes que algo aconteça. Não depois.</strong>
             </p>
-            <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20um%20orçamento%20para%20câmeras%20de%20segurança!" 
-               class="btn btn-primary">
+            <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteção%20com%20câmeras%20de%20segurança!" 
+               class="btn btn-primary btn-large">
+              <i class="fab fa-whatsapp"></i>
               Quero proteção
             </a>
           </div>
           <div class="highlight-image">
-            <img src="https://via.placeholder.com/300x200/333/FFD700?text=Camera+PTZ" 
-                 alt="Câmera PTZ" 
+            <img :src="camera2Img" 
+                 alt="Sistema de Câmeras de Segurança" 
                  class="ptz-img">
           </div>
         </div>
@@ -378,6 +382,7 @@ export default {
   name: 'CamerasLandingPage',
   setup() {
     const cameraImg = new URL('../assets/images/services/camera.png', import.meta.url).href
+    const camera2Img = new URL('../assets/images/services/camera 2.png', import.meta.url).href
     
     const form = ref({
       name: '',
@@ -425,6 +430,7 @@ export default {
 
     return {
       cameraImg,
+      camera2Img,
       form,
       isSubmitting,
       submitMessage,
