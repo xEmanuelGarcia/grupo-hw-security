@@ -2,6 +2,7 @@
   <div id="app">
     <!-- Header -->
     <AppHeader 
+      v-if="!isCamerasLandingPage"
       :is-scrolled="isScrolled"
       :mobile-menu-open="mobileMenuOpen"
       @toggle-mobile-menu="toggleMobileMenu"
@@ -64,6 +65,11 @@ export default {
     const { y } = useScroll(window)
     const isScrolled = ref(false)
     const route = useRoute()
+
+    // Verificar se está na landing page de câmeras
+    const isCamerasLandingPage = computed(() => {
+      return route.path === '/cameras'
+    })
 
     // Promoção do Kit de Câmeras
     const currentPromotion = ref({
@@ -325,7 +331,8 @@ export default {
       closeMobileMenu,
       handlePromotionClick,
       handlePromotionClose,
-      handleFormSubmit
+      handleFormSubmit,
+      isCamerasLandingPage
     }
   }
 }
