@@ -884,6 +884,14 @@ export default {
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+
+  .process-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .process-images {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -922,8 +930,12 @@ export default {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .process-images {
+  .process-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .process-images {
+    display: none;
   }
 
   .form-card {
