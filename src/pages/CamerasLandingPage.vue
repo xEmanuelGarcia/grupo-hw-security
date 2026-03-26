@@ -9,13 +9,12 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              O que foi conquistado com anos<br/>
-              não vai ser levado em minutos
+              Sua casa ou seu negócio<br/>
+               podem ser o próximo alvo.
             </h1>
             
             <p class="hero-subtitle">
-              Invista em segurança de verdade. Câmeras com visão total, 
-              alertas instantâneos e o conforto de saber: agora nada passa despercebido.
+              Todos os dias imóveis são invadidos por falta de monitoramento. Com um sistema de câmeras de segurança, você acompanha tudo em tempo real pelo celular e protege o que levou anos para conquistar.
             </p>
             <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteger%20meu%20espaço%20com%20câmeras%20de%20segurança!" 
                class="btn btn-primary btn-large">
