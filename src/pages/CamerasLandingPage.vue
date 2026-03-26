@@ -1,5 +1,8 @@
 <template>
   <div class="cameras-landing">
+    <!-- Cameras Header -->
+    <CamerasHeader />
+
     <!-- Hero Section -->
     <section class="hero-cameras">
       <div class="container">
@@ -9,10 +12,7 @@
               O que foi conquistado com anos<br/>
               não vai ser levado em minutos
             </h1>
-            <div class="location-badge">
-              <i class="fas fa-shield-alt"></i>
-              <span>Proteção 24/7</span>
-            </div>
+            
             <p class="hero-subtitle">
               Invista em segurança de verdade. Câmeras com visão total, 
               alertas instantâneos e o conforto de saber: agora nada passa despercebido.
@@ -31,80 +31,10 @@
         </div>
       </div>
     </section>
-
-    <!-- Problemas Section -->
-    <section class="problems-section">
-      <div class="container">
-        <h2 class="section-title">É impossível estar em todos os lugares ao mesmo tempo</h2>
-        
-        <div class="problems-grid">
-          <div class="problem-card">
-            <i class="fas fa-door-open problem-icon"></i>
-            <h3>Portões</h3>
-          </div>
-          <div class="problem-card">
-            <i class="fas fa-boxes problem-icon"></i>
-            <h3>Estoque</h3>
-          </div>
-          <div class="problem-card">
-            <i class="fas fa-warehouse problem-icon"></i>
-            <h3>Garagem</h3>
-          </div>
-          <div class="problem-card">
-            <i class="fas fa-door-closed problem-icon"></i>
-            <h3>Corredores</h3>
-          </div>
-        </div>
-
-        <div class="highlight-box">
-          <div class="highlight-content">
-            <p class="highlight-text">
-              <strong class="fear-phrase">Se você já teve medo de sair de casa,</strong><br/>
-              deixar seu negócio sozinho ou se preocupou<br/>
-              com o que acontece quando você não está presente...
-            </p>
-            <p class="impact-phrase">Então saiba a importância de agir<br/>antes que algo aconteça.</p>
-            <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20proteção%20com%20câmeras%20de%20segurança!" 
-               class="btn btn-primary btn-large">
-              <i class="fab fa-whatsapp"></i>
-              Quero proteção
-            </a>
-          </div>
-          <div class="highlight-image">
-            <img :src="camera2Img" 
-                 alt="Sistema de Câmeras de Segurança" 
-                 class="ptz-img">
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Tipos de Câmeras Section -->
     <section class="cameras-types">
       <div class="container">
-        <h2 class="section-title white">Câmeras de segurança para quem<br/>leva proteção a sério</h2>
-        
-        <div class="types-grid">
-          <div class="type-card">
-            <img :src="camera3Img" 
-                 alt="Câmera Externas" 
-                 class="type-img">
-            <h3>Câmeras Externas HD</h3>
-          </div>
-          <div class="type-card">
-            <img :src="camera4Img" 
-                 alt="Monitoramento Interno" 
-                 class="type-img">
-            <h3>Monitoramento Interno</h3>
-          </div>
-          <div class="type-card">
-            <img :src="camera5Img" 
-                 alt="Centro de Monitoramento" 
-                 class="type-img">
-            <h3>Central 24 horas</h3>
-          </div>
-        </div>
-
+        <h2 class="section-title white">Segurança a todo momento</h2>
         <div class="features-grid">
           <div class="feature-item">
             <i class="fas fa-video"></i>
@@ -141,6 +71,9 @@
       </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <WhyChooseUsSection :reasons="whyChooseUs" />
+    
     <!-- Como Funciona Section -->
     <section class="how-it-works">
       <div class="container">
@@ -201,6 +134,12 @@
       </div>
     </section>
 
+    <!-- About Section -->
+    <AboutSection />
+
+    <!-- Partners Section -->
+    <PartnersSection />
+
     <!-- Depoimentos Section -->
     <section class="testimonials-dark">
       <div class="container">
@@ -256,33 +195,6 @@
           </div>
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">+ 3.500</div>
-            <div class="stat-label">câmeras<br/>instaladas</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">> 20</div>
-            <div class="stat-label">cidades<br/>atendidas</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Equipe</div>
-            <div class="stat-label">qualificada e<br/>certificada</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Tecnologia</div>
-            <div class="stat-label">de ponta com<br/>alta definição</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Atendimento</div>
-            <div class="stat-label">humanizado e<br/>personalizado</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">Proteção</div>
-            <div class="stat-label">que vai além das<br/>câmeras</div>
-          </div>
-        </div>
-
         <div class="cta-center">
           <a href="https://wa.me/5551933003158?text=Olá!%20Quero%20solicitar%20um%20orçamento%20de%20câmeras!" 
              class="btn btn-primary btn-large">
@@ -295,8 +207,19 @@
 </template>
 
 <script>
+import CamerasHeader from '../components/CamerasHeader.vue'
+import WhyChooseUsSection from '../components/WhyChooseUsSection.vue'
+import AboutSection from '../components/AboutSection.vue'
+import PartnersSection from '../components/PartnersSection.vue'
+
 export default {
   name: 'CamerasLandingPage',
+  components: {
+    CamerasHeader,
+    WhyChooseUsSection,
+    AboutSection,
+    PartnersSection
+  },
   setup() {
     const cameraImg = new URL('../assets/images/services/camera.png', import.meta.url).href
     const camera2Img = new URL('../assets/images/services/camera 2.png', import.meta.url).href
@@ -306,6 +229,33 @@ export default {
     const camera6Img = new URL('../assets/images/services/fullcolor.jpg', import.meta.url).href
     const camera7Img = new URL('../assets/images/services/CAMERA 7.png', import.meta.url).href
 
+    const whyChooseUs = [
+      {
+        icon: 'fas fa-trophy',
+        title: 'Líder de Mercado',
+        subtitle: 'Excelência Comprovada',
+        description: 'Mais de 7 anos de experiência oferecendo soluções completas em segurança com resultados comprovados'
+      },
+      {
+        icon: 'fas fa-microchip',
+        title: 'Tecnologia Avançada',
+        subtitle: 'Inovação Constante',
+        description: 'Equipamentos de última geração: CFTV, alarmes inteligentes, controle de acesso e rastreamento GPS'
+      },
+      {
+        icon: 'fas fa-users',
+        title: 'Suporte Dedicado',
+        subtitle: 'Atendimento Personalizado',
+        description: 'Equipe especializada disponível 24h para todos os nossos serviços: portarias, alarmes e monitoramento'
+      },
+      {
+        icon: 'fas fa-shield-alt',
+        title: 'Proteção Completa',
+        subtitle: 'Segurança Total',
+        description: 'Soluções integradas para residências e empresas: tudo que você precisa em segurança, exceto vigilância'
+      }
+    ]
+
     return {
       cameraImg,
       camera2Img,
@@ -313,13 +263,18 @@ export default {
       camera4Img,
       camera5Img,
       camera6Img,
-      camera7Img
+      camera7Img,
+      whyChooseUs
     }
   }
 }
 </script>
 
 <style scoped>
+/* Container principal */
+.cameras-landing {
+}
+
 /* Hero Section */
 .hero-cameras {
   background: #181818;

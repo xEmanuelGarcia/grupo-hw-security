@@ -22,7 +22,7 @@
   <CookieConsent />
 
   <!-- Footer -->
-  <AppFooter :contact-info="contactInfo" />
+  <AppFooter v-if="!isCamerasLandingPage" :contact-info="contactInfo" />
 
   <!-- WhatsApp Float Button -->
   <WhatsAppFloat :phone="contactInfo.whatsapp" />
