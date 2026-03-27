@@ -46,7 +46,7 @@ export default {
       'Central de monitoramento 24h'
     ])
 
-  const logoUrl = new URL('../assets/images/about/base.png', import.meta.url).href
+  const logoUrl = new URL('../assets/images/about/Equipehw.jpeg', import.meta.url).href
 
     return {
       features,
