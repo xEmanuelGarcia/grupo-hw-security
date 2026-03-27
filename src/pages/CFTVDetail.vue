@@ -12,7 +12,7 @@
             <div class="service-info-blocks-stack">
               <div class="service-info-block">
                 <h2 class="section-sub">O que é?</h2>
-                <p>Sistemas de CFTV (Circuito Fechado de TV) permitem o monitoramento 24h de ambientes internos e externos, com câmeras de alta definição, gravação segura e acesso remoto. Ideal para residências, empresas e condomínios que buscam segurança e controle total.</p>
+                <p>Sistemas de CFTV (Circuito Fechado de TV) permitem o monitoramento 24h de ambientes internos e externos, com câmeras de alta definição e câmeras WiFi com conectividade inteligente para acesso remoto instantâneo, gravação segura e acesso remoto. Ideal para residências, empresas e condomínios que buscam segurança e controle total.</p>
               </div>
               <div class="service-info-block">
                 <h2 class="section-sub">Principais Recursos</h2>
@@ -20,9 +20,11 @@
                   <li>Instalação profissional de câmeras</li>
                   <li>Imagens em HD/4K e visão noturna</li>
                   <li>Acesso remoto por app ou computador</li>
+                  <li>Câmeras WiFi conectadas via rede doméstica ou comercial</li>
                   <li>Gravação em nuvem/local</li>
                   <li>Alertas em tempo real</li>
                   <li>Integração com alarmes e sensores</li>
+                  <li>Integração com câmeras WiFi e sistemas inteligentes</li>
                 </ul>
               </div>
             </div>
