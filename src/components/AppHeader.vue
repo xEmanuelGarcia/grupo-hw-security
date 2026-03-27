@@ -4,9 +4,9 @@
     <div class="container">
       <router-link to="/" class="nav-brand" aria-label="Ir para a página inicial">
   <img :src="logoUrl" alt="Logo Grupo HW" class="logo-img" />
-        <span>Grupo HW</span>
+        <span v-if="showBrandText">Grupo HW</span>
       </router-link>
-      <nav class="nav">
+      <nav class="nav" v-if="showNavLinks">
         <ul class="nav-list" :class="{ active: mobileMenuOpen }">
           <li><router-link to="/" class="nav-link" @click.native="$emit('close-mobile-menu')">Início</router-link></li>
           <li><router-link to="/servicos" class="nav-link" @click.native="$emit('close-mobile-menu')">Serviços</router-link></li>
@@ -36,6 +36,14 @@ export default {
     mobileMenuOpen: {
       type: Boolean,
       default: false
+    },
+    showNavLinks: {
+      type: Boolean,
+      default: true
+    },
+    showBrandText: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

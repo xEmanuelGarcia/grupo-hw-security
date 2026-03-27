@@ -2,9 +2,10 @@
   <div id="app">
     <!-- Header -->
     <AppHeader 
-      v-if="!isCamerasLandingPage"
       :is-scrolled="isScrolled"
       :mobile-menu-open="mobileMenuOpen"
+      :show-nav-links="!isLPPage"
+      :show-brand-text="!isLPPage"
       @toggle-mobile-menu="toggleMobileMenu"
       @close-mobile-menu="closeMobileMenu"
     />
@@ -22,7 +23,7 @@
   <CookieConsent />
 
   <!-- Footer -->
-  <AppFooter v-if="!isCamerasLandingPage" :contact-info="contactInfo" />
+  <AppFooter v-if="!isLPPage" :contact-info="contactInfo" />
 
   <!-- WhatsApp Float Button -->
   <WhatsAppFloat :phone="contactInfo.whatsapp" />
@@ -66,9 +67,9 @@ export default {
     const isScrolled = ref(false)
     const route = useRoute()
 
-    // Verificar se está na landing page de câmeras
-    const isCamerasLandingPage = computed(() => {
-      return route.path === '/cameras'
+    // Verificar se está em qualquer landing page de câmeras
+    const isLPPage = computed(() => {
+      return route.path === '/cameras' || route.path === '/camerasdeseguranca'
     })
 
     // Promoção do Kit de Câmeras
@@ -332,7 +333,7 @@ export default {
       handlePromotionClick,
       handlePromotionClose,
       handleFormSubmit,
-      isCamerasLandingPage
+      isLPPage
     }
   }
 }
