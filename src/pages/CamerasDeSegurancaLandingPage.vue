@@ -14,17 +14,11 @@
                     <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                         <!-- Text Column -->
                         <div class="flex-1 text-center lg:text-left">
-                            <div class="inline-block bg-hw-yellow px-4 py-1 mb-6">
-                                <span class="font-display font-extrabold text-accent-foreground text-sm tracking-widest">HW SEGURANÇA</span>
-                            </div>
                             <h1 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-                                SUA CASA FOI INVADIDA ENQUANTO VOCÊ DORMIA.
-                                <br><span class="block text-2xl md:text-3xl mt-3 text-muted-foreground font-bold">
-                                    E a câmera barata que você comprou? Não gravou nada.
-                                </span>
+                                Seu maior erro pode ser não ter câmeras de segurança protegendo o que você mais valoriza hoje.
                             </h1>
                             <p class="font-body text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-                                Câmeras HW com videomonitoramento profissional 24h. Resolução 4K, visão noturna e alerta instantâneo no seu celular.
+                                Monitore sua casa ou empresa em tempo real, direto do celular, e tenha a tranquilidade de saber que tudo está seguro 24 horas por dia.
                             </p>
                             
                             <!-- CTA Button -->
@@ -183,8 +177,8 @@
             <!-- TESTIMONIALS SECTION -->
             <section class="hw-section bg-secondary">
                 <div class="hw-container">
-                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-8">QUEM PROTEGE COM HW, <span class="text-hw-yellow block lg:inline">NÃO VOLTA ATRÁS</span></h2>
-                    
+                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-8">QUEM PROTEGE COM HW, </h2>
+                    <h2 class="text-hw-yellow"><span>NÃO VOLTA ATRÁS</span></h2>                    
                     <p class="font-body text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">Mais de 2.000 residências e empresas já confiam na HW Segurança.</p>
                     <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         <div v-for="testimonial in testimonials" :key="testimonial.id" class="bg-background border border-border p-6 md:p-8 flex flex-col">
@@ -295,7 +289,7 @@ const toggleFaq = (faqId) => {
 
 // Hero Benefits
 const heroBenefits = [
-    { id: 1, icon: IconShield, label: 'Garantia 2 anos' },
+  //  { id: 1, icon: IconShield, label: 'Garantia 2 anos' },
     { id: 2, icon: IconEye, label: 'Visão noturna' },
     { id: 3, icon: IconWifi, label: 'Acesso remoto' }
 ]
