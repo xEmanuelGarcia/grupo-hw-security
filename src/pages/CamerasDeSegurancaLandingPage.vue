@@ -183,7 +183,7 @@
             <!-- TESTIMONIALS SECTION -->
             <section class="hw-section bg-secondary">
                 <div class="hw-container">
-                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-8">QUEM PROTEGE COM HW, <span class="text-hw-yellow">NÃO VOLTA ATRÁS</span></h2>
+                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-8">QUEM PROTEGE COM HW, <span class="text-hw-yellow block lg:inline">NÃO VOLTA ATRÁS</span></h2>
                     
                     <p class="font-body text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">Mais de 2.000 residências e empresas já confiam na HW Segurança.</p>
                     <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -224,7 +224,7 @@
             <!-- FAQ SECTION -->
 <section class="hw-section bg-primary text-primary-foreground">
   <div class="hw-container max-w-3xl">
-    <h2 class="font-display font-black text-3xl mdtext-4xl lgtext-5xl text-center mb-12">
+    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center mb-12">
       AINDA TEM 
       <span class="text-hw-yellow">DÚVIDAS?</span>
     </h2>
@@ -240,7 +240,7 @@
         <h3 data-orientation="vertical" :data-state="openFaqId === faq.id ? 'open' : 'closed'" class="flex">
           <button 
             type="button" 
-            class="flex flex-1 items-center justify-between transition-all font-display font-bold text-left text-primary-foreground hover:text-hw-yellow hover:no-underline py-5 text-base mdtext-lg"
+            class="flex flex-1 items-center justify-between transition-all font-display font-bold text-left text-primary-foreground hover:text-hw-yellow hover:no-underline py-5 text-base md:text-lg"
             :data-state="openFaqId === faq.id ? 'open' : 'closed'"
             :aria-expanded="openFaqId === faq.id"
             @click="toggleFaq(faq.id)"
@@ -262,7 +262,7 @@
     </div>
 
     <div class="text-center mt-12">
-      <a :href="whatsappLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-hw-yellow font-display font-extrabold text-accent-foreground px-8 py-4 text-base mdtext-lg tracking-wide hover:bg-hw-yellow-hover hover:scale-105 transition-all duration-150 animate-pulse-glow">
+      <a :href="whatsappLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-hw-yellow font-display font-extrabold text-accent-foreground px-8 py-4 text-base md:text-lg tracking-wide hover:bg-hw-yellow-hover hover:scale-105 transition-all duration-150 animate-pulse-glow">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-6 h-6">
           <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
         </svg>
@@ -324,10 +324,10 @@ const comparisonItems = {
 const technologies = [
     { stat: '4K', title: 'Resolução Ultra HD', desc: 'Imagens nítidas mesmo com zoom digital' },
     { stat: '30m', title: 'Visão Noturna', desc: 'Infravermelho que enxerga no escuro total' },
-    { stat: '<3s', title: 'Tempo de Alerta', desc: 'Notificação instantânea no seu celular' },
+    { stat: '3s', title: 'Tempo de Alerta', desc: 'Notificação instantânea no seu celular' },
     { stat: '24/7', title: 'Monitoramento', desc: 'Gravação contínua em nuvem segura' },
     { stat: 'IP67', title: 'Resistência', desc: 'À prova d\'água, poeira e interperies' },
-    { stat: '2 anos', title: 'Garantia Total', desc: 'Cobertura completa com suporte dedicado' }
+//    { stat: '2 anos', title: 'Garantia Total', desc: 'Cobertura completa com suporte dedicado' }
 ]
 
 // Testimonials - Google Reviews Reais
@@ -415,6 +415,11 @@ onMounted(() => {
   background-color: #ffffff;
   color: #1a1a1a;
   overflow-x: hidden;
+}
+
+.cameras-landing-page,
+.cameras-landing-page * {
+  box-sizing: border-box;
 }
 
 .cameras-landing-page main {
@@ -1664,6 +1669,14 @@ onMounted(() => {
 .cameras-landing-page section:nth-of-type(5) h2 span {
   color: #ffd700;
   font-weight: 900;
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .cameras-landing-page section:nth-of-type(5) h2 span {
+    display: block;
+    margin-top: 0.4rem;
+  }
 }
 
 /* Descrição */
@@ -2203,6 +2216,56 @@ onMounted(() => {
   .cameras-landing-page section:nth-of-type(7) a.bg-hw-yellow {
     font-size: 0.95rem;
     padding: 0.75rem 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cameras-landing-page .hw-container {
+    padding: 0 1rem !important;
+  }
+
+  .cameras-landing-page .hw-section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .cameras-landing-page h1 {
+    font-size: 1.95rem;
+    line-height: 1.25;
+  }
+
+  .cameras-landing-page h1 span.block {
+    font-size: 1rem;
+  }
+
+  .cameras-landing-page a.bg-hw-yellow {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .cameras-landing-page .flex.flex-col.sm\:flex-row {
+    flex-wrap: wrap;
+  }
+
+  .cameras-landing-page .flex.flex-col.sm\:flex-row > * {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cameras-landing-page section:nth-of-type(2) .grid > div {
+    padding: 1.5rem;
+  }
+
+  .cameras-landing-page section:nth-of-type(7) button {
+    margin: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .cameras-landing-page section:nth-of-type(7) .accordion-content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
