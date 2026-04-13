@@ -183,7 +183,8 @@
             <!-- TESTIMONIALS SECTION -->
             <section class="hw-section bg-secondary">
                 <div class="hw-container">
-                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-4">QUEM PROTEGE COM HW, <span class="text-hw-yellow">NÃO VOLTA ATRÁS</span></h2>
+                    <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-8">QUEM PROTEGE COM HW, <span class="text-hw-yellow">NÃO VOLTA ATRÁS</span></h2>
+                    
                     <p class="font-body text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">Mais de 2.000 residências e empresas já confiam na HW Segurança.</p>
                     <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         <div v-for="testimonial in testimonials" :key="testimonial.id" class="bg-background border border-border p-6 md:p-8 flex flex-col">
@@ -279,12 +280,17 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Shield as IconShield, Eye as IconEye, Wifi as IconWifi, X as IconX, Check as IconCheck, Star as IconStar } from 'lucide-vue-next'
+import { useGoogleReviews } from '@/composables/useGoogleReviews'
 
 const openFaqId = ref(null)
+
+// Google Reviews Composable - Sincroniza automaticamente
+const { googleReviewsInfo, testimonials } = useGoogleReviews()
 
 const toggleFaq = (faqId) => {
   openFaqId.value = openFaqId.value === faqId ? null : faqId
 }
+
 // ============ DATA STRUCTURES ============
 
 // Hero Benefits
@@ -320,31 +326,15 @@ const technologies = [
     { stat: '30m', title: 'Visão Noturna', desc: 'Infravermelho que enxerga no escuro total' },
     { stat: '<3s', title: 'Tempo de Alerta', desc: 'Notificação instantânea no seu celular' },
     { stat: '24/7', title: 'Monitoramento', desc: 'Gravação contínua em nuvem segura' },
-    { stat: 'IP67', title: 'Resistência', desc: 'À prova d\'água, poeira e vandalismo' },
+    { stat: 'IP67', title: 'Resistência', desc: 'À prova d\'água, poeira e interperies' },
     { stat: '2 anos', title: 'Garantia Total', desc: 'Cobertura completa com suporte dedicado' }
 ]
 
-// Testimonials
-const testimonials = [
-    {
-        id: 1,
-        name: 'Carlos R.',
-        location: 'São Paulo, SP',
-        text: 'Depois que instalei as câmeras HW, flagrei uma tentativa de invasão e a polícia foi acionada em minutos. A qualidade da imagem é impressionante.'
-    },
-    {
-        id: 2,
-        name: 'Ana Paula M.',
-        location: 'Belo Horizonte, MG',
-        text: 'Já tive câmera barata que parava de funcionar com chuva. A HW funciona em qualquer condição. Me sinto segura de verdade agora.'
-    },
-    {
-        id: 3,
-        name: 'Roberto S.',
-        location: 'Curitiba, PR',
-        text: 'O suporte é excepcional. Tive uma dúvida às 2h da manhã e fui atendido na hora. Recomendo para qualquer empresário que leva segurança a sério.'
-    }
-]
+// Testimonials - Google Reviews Reais
+// Agora sincronizados automaticamente via composable useGoogleReviews
+
+// Google Reviews Info
+// Agora sincronizado automaticamente via composable useGoogleReviews
 
 // FAQ Items
 const faqItems = [
@@ -381,7 +371,7 @@ const faqItems = [
 ]
 
 // App Links (Centralized)
-const whatsappLink = 'https://wa.me/5511999999999?text=Olá! Quero saber mais sobre as câmeras HW.'
+const whatsappLink = 'https://wa.me/5551933003158?text=Olá! Acessei o site e quero saber mais sobre as câmeras de segurança'
 
 // ============ LIFECYCLE ============
 
@@ -513,12 +503,14 @@ onMounted(() => {
   background-color: #ffd700;
   color: #1a1a1a;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 20px;
   display: inline-block;
   margin-bottom: 1.5rem;
   font-weight: 900;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
 }
 
 /* H1 - Título Principal (REDIMENSIONADO) */
@@ -600,11 +592,13 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -616,8 +610,13 @@ onMounted(() => {
 
 .cameras-landing-page a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
+  letter-spacing: 0.05em;
+}
+
+.cameras-landing-page a.bg-hw-yellow:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
 /* Ícone do botão */
@@ -650,6 +649,14 @@ onMounted(() => {
   align-items: center;
   gap: 0.5rem;
   color: #666666;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.cameras-landing-page .flex.items-center.gap-2:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+  transform: scale(1.05);
 }
 
 .cameras-landing-page .flex.items-center.gap-2 svg {
@@ -673,6 +680,14 @@ onMounted(() => {
   width: 100%;
   max-width: 280px;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.12));
+  border-radius: 16px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.cameras-landing-page section:nth-of-type(1) img:hover,
+.cameras-landing-page section:nth-of-type(4) img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18));
 }
 
 @media (min-width: 768px) {
@@ -760,6 +775,24 @@ onMounted(() => {
   }
 }
 
+@keyframes float-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
 .cameras-landing-page a.bg-hw-yellow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
@@ -844,8 +877,10 @@ onMounted(() => {
   gap: 0;
   max-width: 900px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -863,6 +898,12 @@ onMounted(() => {
   padding: 2.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cameras-landing-page section:nth-of-type(2) .grid > div:first-child:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 769px) {
@@ -923,6 +964,12 @@ onMounted(() => {
   gap: 1rem;
   font-size: 1rem;
   line-height: 1.5;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.cameras-landing-page section:nth-of-type(2) li:hover {
+  transform: translateX(6px);
 }
 
 /* Ícone X (vermelho) */
@@ -977,8 +1024,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -993,8 +1040,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(2) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(2) svg.w-6.h-6 {
@@ -1135,19 +1182,21 @@ onMounted(() => {
   background-color: #ffffff;
   padding: 2.5rem 2rem;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .cameras-landing-page section:nth-of-type(3) .grid > div:hover {
   border-color: #ffd700;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(255, 215, 0, 0.25);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #ffffff 0%, #fffef5 100%);
 }
 
 /* ========================================
@@ -1207,8 +1256,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -1223,8 +1272,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(3) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(3) svg.w-6.h-6 {
@@ -1457,12 +1506,19 @@ onMounted(() => {
   color: #1a1a1a;
   font-weight: 500;
   justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 @media (min-width: 1024px) {
   .cameras-landing-page section:nth-of-type(4) li {
     justify-content: flex-start;
   }
+}
+
+.cameras-landing-page section:nth-of-type(4) li:hover {
+  transform: translateX(8px);
+  color: #ffd700;
 }
 
 /* Bolinha amarela do item */
@@ -1489,8 +1545,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -1511,8 +1567,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(4) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(4) svg.w-6.h-6 {
@@ -1655,17 +1711,19 @@ onMounted(() => {
 .cameras-landing-page section:nth-of-type(5) .grid > div {
   background-color: #ffffff;
   padding: 2rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .cameras-landing-page section:nth-of-type(5) .grid > div:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 0 20px rgba(255, 215, 0, 0.1);
   border-color: #ffd700;
-  transform: translateY(-4px);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #ffffff 0%, #fffef5 100%);
 }
 
 /* ========================================
@@ -1705,8 +1763,9 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 2px solid #ffd700;
   padding-top: 1rem;
+  transition: all 0.3s ease;
 }
 
 /* Nome do autor */
@@ -1746,8 +1805,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -1762,8 +1821,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(5) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(5) svg.w-6.h-6 {
@@ -1909,8 +1968,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -1918,8 +1977,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(6) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(6) svg.w-6.h-6 {
@@ -2014,17 +2073,23 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: color 0.3s ease;
+  transition: all 0.4s ease;
   font-family: inherit;
   margin: 0;
+  border-radius: 8px;
+  padding: 1rem 0.75rem;
+  margin: 0 -0.75rem;
 }
 
 .cameras-landing-page section:nth-of-type(7) button:hover {
   color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.08);
+  padding-left: 1rem;
 }
 
 .cameras-landing-page section:nth-of-type(7) button[data-state="open"] {
   color: #ffd700;
+  background-color: rgba(255, 215, 0, 0.05);
 }
 
 /* Ícone Chevron */
@@ -2043,6 +2108,21 @@ onMounted(() => {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
   margin: 0;
+  animation: fadeIn 0.4s ease;
+  background: rgba(255, 215, 0, 0.02);
+  padding: 1rem 0.75rem;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* CTA Button */
@@ -2063,8 +2143,8 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   letter-spacing: 0.03em;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -2079,8 +2159,8 @@ onMounted(() => {
 
 .cameras-landing-page section:nth-of-type(7) a.bg-hw-yellow:hover {
   background-color: #ffed4e;
-  transform: scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 45px rgba(255, 215, 0, 0.4);
 }
 
 .cameras-landing-page section:nth-of-type(7) a svg.w-6.h-6 {

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
+    "axios": "^1.14.0",
+    "cheerio": "^1.2.0",
     "lucide-vue-next": "^1.0.0",
     "swiper": "^11.2.10",
     "vue": "^3.4.0",
