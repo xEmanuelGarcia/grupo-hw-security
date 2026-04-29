@@ -151,11 +151,11 @@
             </section>
 
             <!-- APP FEATURES SECTION -->
-            <section class="hw-section bg-background">
+            <section class="hw-section bg-white">
                 <div class="hw-container">
                     <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                         <div class="flex-1 flex justify-center">
-                            <img src="/assets/app-mockup-CJNoBoKI.png" alt="Aplicativo HW Segurança mostrando câmera ao vivo" class="w-64 md:w-80 drop-shadow-2xl">
+                            <img :src="celularImage" alt="Aplicativo HW Segurança mostrando câmera ao vivo" class="app-image w-64 md:w-80">
                         </div>
                         <div class="flex-1 text-center lg:text-left">
                             <h2 class="font-display font-black text-3xl md:text-4xl text-foreground mb-6 leading-tight">SUA CASA NA PALMA<span class="block text-hw-yellow">DA SUA MÃO.</span></h2>
@@ -202,16 +202,24 @@
 
             <!-- ABOUT SECTION -->
             <section class="hw-section bg-background">
-                <div class="hw-container max-w-3xl text-center">
-                    <div class="inline-block bg-hw-yellow px-4 py-1 mb-6">
-                        <span class="font-display font-extrabold text-accent-foreground text-sm tracking-widest">QUEM SOMOS</span>
+                <div class="hw-container max-w-6xl mx-auto">
+                    <div class="about-section-grid">
+                        <div class="text-center lg:text-left">
+                            <div class="inline-block bg-hw-yellow px-4 py-1 mb-6">
+                                <span class="font-display font-extrabold text-accent-foreground text-sm tracking-widest">QUEM SOMOS</span>
+                            </div>
+                            <h2 class="font-display font-black text-3xl md:text-4xl text-foreground mb-6">HW SEGURANÇA</h2>
+                            <p class="font-body text-lg text-muted-foreground mb-6 leading-relaxed">Com mais de 7 anos de experiência no mercado de segurança, o Grupo HW é líder em soluções de proteção e monitoramento. Nossa missão é proteger o que é mais importante para você através de tecnologia avançada e atendimento especializado.</p>
+                            <p class="font-body text-lg text-muted-foreground mb-6 leading-relaxed">Oferecemos soluções completas: portarias físicas e virtuais, CFTV, alarmes monitorados, rastreamento veicular, segurança residencial e empresarial. Tudo que você precisa para se sentir protegido.</p>
+                            <a :href="whatsappLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-hw-yellow font-display font-extrabold text-accent-foreground px-8 py-4 text-base md:text-lg tracking-wide hover:bg-hw-yellow-hover hover:scale-105 transition-all duration-150 animate-pulse-glow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-6 h-6"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>CONHEÇA NOSSAS SOLUÇÕES
+                            </a>
+                        </div>
+
+                        <div class="about-card">
+                            <img :src="aboutImage" alt="Equipe HW Segurança" class="about-card-image">
+                        </div>
                     </div>
-                    <h2 class="font-display font-black text-3xl md:text-4xl text-foreground mb-6">HW SEGURANÇA</h2>
-                    <p class="font-body text-lg text-muted-foreground mb-6 leading-relaxed">A HW nasceu com um propósito: garantir que nenhuma família ou empresa fique vulnerável por depender de equipamentos de baixa qualidade. Com mais de 10 anos de experiência no mercado de segurança eletrônica, oferecemos soluções profissionais com tecnologia de ponta.</p>
-                    <p class="font-body text-lg text-muted-foreground mb-8 leading-relaxed">Nossa equipe de engenheiros e técnicos especializados cuida de tudo: do projeto personalizado à instalação e manutenção. Porque segurança não é produto — é compromisso.</p>
-                    <a :href="whatsappLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-hw-yellow font-display font-extrabold text-accent-foreground px-8 py-4 text-base md:text-lg tracking-wide hover:bg-hw-yellow-hover hover:scale-105 transition-all duration-150 animate-pulse-glow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-6 h-6"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>CONHEÇA NOSSAS SOLUÇÕES
-                    </a>
                 </div>
             </section>
            
@@ -275,6 +283,8 @@
 import { ref, onMounted } from 'vue'
 import { Shield as IconShield, Eye as IconEye, Wifi as IconWifi, X as IconX, Check as IconCheck, Star as IconStar } from 'lucide-vue-next'
 import { useGoogleReviews } from '@/composables/useGoogleReviews'
+import celularImage from '@/assets/images/celular.png'
+import aboutImage from '@/assets/images/about/Equipehw.jpeg'
 
 const openFaqId = ref(null)
 
@@ -424,6 +434,35 @@ onMounted(() => {
 .cameras-landing-page section {
   background-color: #ffffff;
   color: #1a1a1a;
+}
+
+.cameras-landing-page .about-section-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .cameras-landing-page .about-section-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.cameras-landing-page .about-card {
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(29, 37, 52, 0.08);
+  max-width: 32rem;
+}
+
+.cameras-landing-page .about-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ========================================
@@ -683,8 +722,27 @@ onMounted(() => {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
+.cameras-landing-page img.app-image {
+  filter: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: none !important;
+  cursor: default !important;
+  background: transparent !important;
+  outline: none !important;
+}
+
+.cameras-landing-page img.app-image:hover {
+  transform: none !important;
+  filter: none !important;
+  cursor: default !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  outline: none !important;
+}
+
 .cameras-landing-page section:nth-of-type(1) img:hover,
-.cameras-landing-page section:nth-of-type(4) img:hover {
+.cameras-landing-page section:nth-of-type(4) img:not(.app-image):hover {
   transform: scale(1.02);
   filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18));
 }
@@ -1192,10 +1250,10 @@ onMounted(() => {
 }
 
 .cameras-landing-page section:nth-of-type(3) .grid > div:hover {
-  border-color: #ffd700;
-  box-shadow: 0 16px 40px rgba(255, 215, 0, 0.25);
-  transform: translateY(-8px);
-  background: linear-gradient(135deg, #ffffff 0%, #fffef5 100%);
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transform: none;
+  background: #ffffff;
 }
 
 /* ========================================
@@ -1335,9 +1393,13 @@ onMounted(() => {
 
 /* Fundo branco */
 .cameras-landing-page section:nth-of-type(4) {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   color: #1a1a1a;
   padding: 4rem 0;
+}
+
+.cameras-landing-page section:nth-of-type(4) .app-image {
+  background-color: transparent !important;
 }
 
 .cameras-landing-page section:nth-of-type(4) * {
