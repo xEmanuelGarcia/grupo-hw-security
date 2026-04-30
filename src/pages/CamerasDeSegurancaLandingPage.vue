@@ -228,7 +228,7 @@
   <div class="hw-container max-w-3xl">
     <h2 class="font-display font-black text-3xl md:text-4xl lg:text-5xl text-center mb-12">
       AINDA TEM 
-      <span class="text-hw-yellow">DÚVIDAS?</span>
+      <span class="text-hw-yellow"> DÚVIDAS?</span>
     </h2>
     
     <div class="space-y-2" data-orientation="vertical">
@@ -455,6 +455,12 @@ onMounted(() => {
   background: #ffffff;
   box-shadow: 0 30px 80px rgba(29, 37, 52, 0.08);
   max-width: 32rem;
+}
+
+@media (max-width: 1023px) {
+  .cameras-landing-page .about-card {
+    margin: 0 auto;
+  }
 }
 
 .cameras-landing-page .about-card-image {
