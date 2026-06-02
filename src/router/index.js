@@ -143,6 +143,10 @@ const routes = [
     redirect: '/seguranca'
   },
   {
+    path: '/politicadePrivacidade',
+    redirect: '/politica-de-privacidade'
+  },
+  {
     path: '/cameras',
     name: 'CamerasLanding',
     component: () => import('../pages/CamerasLandingPage.vue'),
